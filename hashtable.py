@@ -42,8 +42,3 @@ class ChainingHashTable:
         # remove the item from the bucket list if it is present.
         if key in bucket_list:
             bucket_list.remove(key)
-
-myHash = ChainingHashTable()
-myHash.insert('john')
-
-print(myHash.search('john'))
