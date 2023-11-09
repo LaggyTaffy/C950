@@ -3,8 +3,7 @@ import csv
 from hashtable import ChainingHashTable
 
 
-
-
+'''
 class Package:
     def __init__(self, packageID, packageaddress, packagecity, packagestate, packagezip, packagedeadline,
                  packageweight):
@@ -18,15 +17,13 @@ class Package:
 
     def __str__(self):
         return self.packageID, self.packageaddress, self.packagecity, self.packagestate, self.packagezip, self.packagedeadline, self.packageweight
+'''
 
-print(Package)
 
 def packageimport():
     with open('CSVs/packages.csv', newline='') as csvfile:
         reader = csv.reader(csvfile, delimiter=',')
-        next(reader)
         for package in reader:
-
 
             packageID = package[1]
             packageaddress = package[2]
@@ -37,10 +34,10 @@ def packageimport():
             packageweight = package[7]
 
             package = Package(packageID, packageaddress, packagecity, packagestate, packagezip, packagedeadline, packageweight)
-            print(package)
-            myHashTable.insert(packageID, package)
+
+            myHash.insert(packageID, package)
 
 
-myHashTable = ChainingHashTable()
-
-print(myHashTable.table)
+myHash = ChainingHashTable()
+myHash.insert(1, "one")
+print(myHash.table)
