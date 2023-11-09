@@ -1,6 +1,6 @@
 import datetime
 
-from routing import myHash
+from packageimport import myHash
 
 
 def main():
@@ -12,5 +12,3 @@ def main():
     print('--------------------------------')
     print(myHash.table)
 
-
-main()
