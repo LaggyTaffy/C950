@@ -1,23 +1,20 @@
 import csv
 
-dList = []
+from distance import Distance
 
-class Distance:
-    def __init__(self, distance):
-        self.distance = distance
 
-    def __str__(self):
-        return self.distance
+distancetable = []
 
 def distanceimport():
     with open('CSVs/distances.csv', newline='') as csvfile:
         reader = csv.reader(csvfile, delimiter=',')
         for distance in reader:
-            dList.append(distance)
+            distancetable.append(distance)
 
 distanceimport()
 
-def distancecheck():
-    distance = float(dList[start][end])
-
-    return distance
+def distancecheck(start, end):
+    distance = distancetable[start][end]
+    if distance == '':
+        distance = distancetable[end][start]
+    return float(distance)
